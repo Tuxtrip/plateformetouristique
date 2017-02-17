@@ -1,0 +1,200 @@
+%Entête du  document et decclaration du  type de  documents . 
+\documentclass[a4paper, 12pt, openany]{report}
+
+%paquet de choix du type d'encodage 
+\usepackage[utf8]{inputenc}
+
+%paquet de gestion des caractères spéciaux 
+\usepackage{fontenc}
+%declaration  des paquets 
+%paquet permettant l'utilisation des  caractères de  compatibilité 
+\usepackage{textcomp}
+
+%paquet permettant de definir la langue 
+\usepackage[frenchb]{babel}
+%paquet permettant l'utilisation  des caractères symboliques, mathematiques et de certains types de police 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{rotating}
+\usepackage{hyperref}
+%dessin 
+\usepackage{pdftricks}
+\usepackage{pstricks}
+% transformées de laplace 
+%\usepackage mathrsfs
+% appel de  la commande 
+%\renewcommand{\L}{\mathscr{L}} 
+%gestion des marges
+%paquet gérantles marges
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=2.5cm}
+%paquet permettant  l'utilisat\usepackage{tikz}ion d'unités  physiques ou chimiques
+\usepackage[squaren, Gray]{SIunits}
+%paquet dessin tikz 
+\usepackage{tikz}
+
+%gestion  de la biliographie 
+%\usepackage{natbib}
+%\usepackage[backend=biber, style=alphabetic, citestyle=authoryear]{biblatex}
+\usepackage[backend=biber, citestyle=authoryear, natbib=true]{biblatex}
+\addbibresource{biblio.bib}
+\usepackage{csquotes}
+%paquet de gestion des images  flottantes
+\usepackage{placeins}
+
+%paquet  de gestion des titres 
+%\usepackage{titlesec}
+
+%paquet permettant le  centrage des tableaux  et images flottantes 
+%\usepackage{floatrow}
+\usepackage{here}
+
+
+ 
+%paquet permettant d'utiliser un tracé vectorielle des caractères 
+\usepackage{lmodern}
+
+%écriture de code 
+%\usepackage{listings}
+\usepackage{listingsutf8}
+
+%paquet permettant l'utilisation de la  commande includegraphics pour insérer des  images 
+\usepackage{graphicx}
+\usepackage{xcolor}
+%changer TABLE en Tableau 
+\addto \captionsfrench{\renewcommand{\tablename}{Tableau}}
+%changer FIGURE en Figure 
+\addto \captionsfrench{\renewcommand{\figurename}{Figure}}
+
+%%% Use the package for UMONS cover page
+% the option describe the faculty you belong to
+% e.g. fpms, fs, ...
+%\usepackage{lipsum}
+
+%\usepackage[fpms]{umons-coverpage}
+
+%%% Give the relevant pieces of information
+% Your name
+%\umonsAuthor{\\Mohamed \textsc{cisse}}
+% The main title of your thesis
+
+%\umonsTitle{\textit{Master I Ingénieur Civil en Informatique\\ et Gestion - Umons Charleroi}}  
+% The sub-title of your thesis
+%\umonsSubtitle{\Large{Projet d'évaluation technologique des logiciels}}
+% The type of document: the reason of the thesis
+%\umonsDocumentType{
+%\begin{center}
+%\LARGE{\textbf{Prestashop}}
+%\end{center}}
+% Your supervisor(s)
+%\umonsSupervisor{Professeur : Robert VISEUR}
+% The date (or academic year)
+%\umonsDate{Janvier 2017}
+
+
+\begin{document}
+% Ask for a regular cover page with full content and default picture
+%\umonsCoverPage
+
+% \clearpage
+% \vspace*{\stretch{1}}
+% \textit{Nous tentons par delà d'innombrables tristesse d'user de nos rêves comme feu.\vspace*{3cm}\hspace{7cm} A Ma fille Imani} 
+% \vspace*{\stretch{1}}
+%\tableofcontents
+%\addcontentsline{toc}{chapter}{Introduction}
+
+\chapter*{Petit Tutoriel Github}
+\section*{A propos de Github}
+Git est un système de gestion de versions décentralisé. Github est  une des possibilités d'hébergement de votre dépot local en ligne. Git réalise des instantanés des répertoires et fichiers contenus dans votre dépot local. Les différents collaborateurs d'un projet ont sur leur ordinateur la version complète du contenu du  dépot en ligne et peuvent réaliser leurs modifications avant de l'envoyer sur le serveur github où ils possèdent un compte. Dans notre  cas notre cas, le projet est sur : https://github.com/tuxtrip/
+
+\section*{Configuration de git}
+Utilisateurs Windows : Télécharger git et l'installer \\
+
+\begin{enumerate}
+\item Créer un compte sur github et envoyer votre nom d'utilisateur par mail.\\
+\item lancer le shell de l'application git que vous avez téléchargé et installé sur votre ordinateur \\
+\item Configuration des paramètres globaux de votre dépot local Git\\
+Tapez  :
+\begin{itemize}
+\item  \textbf{git config - -global user.name ''votre nom d'utilisateur github''}
+\item  \textbf{git config - -global user.email 'votre adresse email''}
+\end{itemize}
+(Ne pas oublier les guillemets.  Il n'y a pas d'espace entre les deux tirets, ils sont collés)\\
+\item Créez votre répertoire local et télécharger le dépot github sur votre ordinateur en tapant la commande :\\
+\textbf{git clone https://github.com/tuxtrip/plateformetouristique} \\
+Le dépot github du projet est disponible sur votre ordinateur. 
+\end{enumerate}
+
+\section*{Quelques précisions à propos du dépot plateforme touristique}
+Il possède 3 branches:
+\begin{itemize}
+\item La branche master qui contient les informations générales sur le projet
+\item La branche appli-web, le répertoire de travail sur l'application Web
+\item La branche appli-mobile, le répertoire de travail sur l'application mobile\\
+\end{itemize}
+Pour vous positionner dans le bon sous projet il faut taper la commande : \\
+ \textbf{git checkout master } ou  \textbf{git checkout appli-web} ou  \textbf{git checkout appli-mobile} selon votre choix.\\
+Une fois positionné dans le bon sous projet vous pouvez commencer à travailler.
+
+\section*{Généralités sur l'usage de git}
+Git posséde 3 niveaux : \\
+\begin{itemize}
+\item Le niveau des fichiers non indexés \\
+\item Celui des fichiers Indexés \\
+\item Celui des fichiers validés et prêts à l'envoi c'est à dire indexé et \og commité\fg{}.\\
+\end{itemize}
+Les fichiers et répertoires présents dans votre espace de travail après clonage du dépot \og plateformetouristique \fg{} sont des fichiers indexés. Ils consituent l'image (snapchot) du dépot initial. 
+Si vous modifiez ces fichiers il faudra les ajouter à l'index avant de les commiter et de les uploader  sur github.com/tuxtrip/.\\
+Pour cela après modification d'un fichier quelconque montravail.txt par exemple, il faut taper : \\
+ \textbf{git add montravail.txt } \\
+afin de réindexer le fichier sachant que dès qu'il a été modifié il ne fait plus partie de l'index (seule la version initiale de ce fichier est conservée dans l'image du dépot et peut être restaurée en cas de besoin). \\
+Vous pouvez vérifier le statut du dépot git et l'état des fichiers avec la commande : \\
+ \textbf{git status}\\
+Une fois le fichier réindexé, Vous pouvez le commiter avec la commande : \\
+ \textbf{git commit -m ''Voici la modification faite sur mon le fichier montravail.txt''}
+Mettre à jour le dépot online github.com/tuxtrip/plateformetouristique en faisant un :
+ \textbf{git pull}\\
+La commande permet de récupérer une version récente du dépot si jamais quelqu'un a entre-temps envoyé des données.\\
+Ensuite taper:\\
+ \textbf{git push - -set-upstream origin nomdelabranche} \\
+Le nom de la branche étant celui du sous projet (master, appli-web ou appli-mobile sur lequel vous avez opéré vos modifications). \\
+Git vous demande d'introduire le login et le mot de passe de votre propre compte github. (Ne pas utilisez le login et le mot de passe tuxtrip)
+
+Si vous voulez voir les dernières modifications faites sur le dépot online vous pouvez utiliser la commande \\
+ \textbf{git log - -decorate} \\
+avec ses différentes options. \\ 
+Pour mieux visualiser les modifications vous pouvez lire la commande  \textbf{git diff} (voir la doc). \\
+Si vous voulez créez votre propre branche vous pouvez utiliser la commande : \\
+ \textbf{git branch nomdevotrebranche}\\
+ Pour effacer une branche : \\
+ \textbf{git push origin - -delete nomdelabranche}\\
+ Le reste de la procédure est identique à ce qui a été décrit précédemment. 
+ 
+ \subsection*{Ajouter un répertoire}
+ Pour ajouter un répertoire il faut créer un fichier dans ce répertoire sinon ça peut ne pas marcher. \\
+ Exemple : Ajout du répertoire MonNouveauRepertoire/ \\
+ Vous créez dans ce répertoire le fichier test.txt par exemple ou vous y mettez le fichier de votre choix. 
+ et vous tapez : \\
+ \textbf{ git add MonNouveauRepertoire/test.txt } \\
+ si ce répertoire contient plusieurs fichiers :\\
+  \textbf{git add MonNouveauRepertoire/*}\\
+  Ensuite faire le commit, le pull et le push comme indiqué précédemment. 
+ 
+ \subsection*{Effacer un fichier ou un répertoire}
+\textbf{git rm nomdufichieraeffacer}\\
+ Pour un répertoire \\
+\textbf{git rm -r nomdurepertoireaeffacer}\\
+La commande git rm efface le fichier  et la désindexe en même temps. 
+Si vous avez effacé le fichier avec la souris,  il faudra indexer cet effacement en retapant : \\
+\textbf{git rm nomdufichieraeffacer} \\
+ou\\
+\textbf{git rm -r nomdurepertoireaeffacer} \\
+Faitre le commit, le pull et le push comme indiqué précédemment.\\
+
+Pour aller plus loin,  La documentation git est présente dans le dépot master.\\
+\vspace{3cm}
+\subsection*{Merci à vous, Bon travail }
+\end{document}
+
+
